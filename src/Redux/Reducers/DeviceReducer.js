@@ -18,7 +18,7 @@ const CHANGE_CURRENT_DEVICE = "CHANGE_CURRENT_DEVICE";
 
 const REMOVE_DEVICE = "REMOVE_DEVICE";
 
-const deviceReducer = (state = deviceState, action) => {
+export const deviceReducer = (state = deviceState, action) => {
     switch (action.type){
         case ADD_DEVICE:
             return { ...state, devices: [...state.devices, action.payload] };
@@ -41,6 +41,9 @@ const deviceReducer = (state = deviceState, action) => {
         //UI
         case CHANGE_CURRENT_DEVICE:
             return { ...state, currentDevice: action.payload };
+
+        default:
+            return state;
     }
 }
 
